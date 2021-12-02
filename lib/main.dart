@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:street_nye/components/banner_image.dart';
+import 'red_pill_screen.dart';
+import 'blue_pill_screen.dart';
 
 import 'components/constants.dart';
 
@@ -63,6 +64,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       appBar: AppBar(
         title: const Text(
           'Welcome to Street NYE',
+          style: TextStyle(fontSize: 16.0),
         ),
         backgroundColor: Constants.matrixGreenColor,
       ),
@@ -70,7 +72,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         child: Column(
           children: [
             SizedBox(
-              height: 800,
+              height: 900,
               child: AnimatedBuilder(
                 animation: _color,
                 builder: (BuildContext _, Widget? __) {
@@ -113,18 +115,26 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               children: [
                 GestureDetector(
                   onTap: () {
-                    print('red pill clicked');
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RedPillScreen()));
                   },
                   child: Image.asset(
                     'assets/images/morepheus_with_red_pill.jpeg',
+                    height: 400,
                   ),
                 ),
                 GestureDetector(
                   onTap: () {
-                    print('blue pill clicked');
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => BluePillScreen()));
                   },
                   child: Image.asset(
                     'assets/images/morepheus_with_blue_pill.jpeg',
+                    height: 400,
                   ),
                 ),
               ],
