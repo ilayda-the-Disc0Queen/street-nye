@@ -66,48 +66,71 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         ),
         backgroundColor: Constants.matrixGreenColor,
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 800,
-            child: AnimatedBuilder(
-              animation: _color,
-              builder: (BuildContext _, Widget? __) {
-                return Stack(
-                  alignment: Alignment.center,
-                  children: <Widget>[
-                    Container(
-                      color: Colors.black,
-                      child: Opacity(
-                          opacity: 1,
-                          child: Image.asset(
-                            'assets/images/matrix_gif.gif',
-                            semanticLabel: 'Binary Matrix rain',
-                            fit: BoxFit.cover,
-                            height: double.infinity,
-                            width: double.infinity,
-                          )),
-                    ),
-                    AnimatedDefaultTextStyle(
-                      duration: const Duration(milliseconds: 200),
-                      style:
-                          const TextStyle(fontSize: 70.0, letterSpacing: 8.0),
-                      child: Container(
-                        margin: const EdgeInsets.all(20.0),
-                        child: Text(
-                          'Do you dare to enter the Matrix?',
-                          style: GoogleFonts.pressStart2p(
-                              color: _color.value, fontSize: 20.0),
-                          textAlign: TextAlign.center,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 800,
+              child: AnimatedBuilder(
+                animation: _color,
+                builder: (BuildContext _, Widget? __) {
+                  return Stack(
+                    alignment: Alignment.center,
+                    children: <Widget>[
+                      Container(
+                        color: Colors.black,
+                        child: Opacity(
+                            opacity: 1,
+                            child: Image.asset(
+                              'assets/images/matrix_gif.gif',
+                              semanticLabel: 'Binary Matrix rain',
+                              fit: BoxFit.cover,
+                              height: double.infinity,
+                              width: double.infinity,
+                            )),
+                      ),
+                      AnimatedDefaultTextStyle(
+                        duration: const Duration(milliseconds: 200),
+                        style:
+                            const TextStyle(fontSize: 70.0, letterSpacing: 8.0),
+                        child: Container(
+                          margin: const EdgeInsets.all(20.0),
+                          child: Text(
+                            'Do you dare to enter the Matrix?',
+                            style: GoogleFonts.pressStart2p(
+                                color: _color.value, fontSize: 20.0),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                );
-              },
+                    ],
+                  );
+                },
+              ),
             ),
-          ),
-        ],
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    print('red pill clicked');
+                  },
+                  child: Image.asset(
+                    'assets/images/morepheus_with_red_pill.jpeg',
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    print('blue pill clicked');
+                  },
+                  child: Image.asset(
+                    'assets/images/morepheus_with_blue_pill.jpeg',
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
