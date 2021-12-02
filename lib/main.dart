@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         child: Column(
           children: [
             SizedBox(
-              height: 900,
+              height: 1000,
               child: AnimatedBuilder(
                 animation: _color,
                 builder: (BuildContext _, Widget? __) {

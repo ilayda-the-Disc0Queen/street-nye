@@ -10,27 +10,51 @@ class BluePillScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            const Center(
-              child: Text(
-                'You take the blue pill - \nthe story ends, you wake up in your bed and believe whatever you want to believe.',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    fontSize: 30.0, color: Constants.matrixGreenColor),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Center(
+                child: Container(
+                  padding: const EdgeInsets.all(20.0),
+                  child: const Text(
+                    'You take the blue pill - \nthe story ends, you wake up in your bed and believe whatever you want to believe.',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                        fontSize: 30.0, color: Constants.matrixGreenColor),
+                  ),
+                ),
               ),
-            ),
-            SizedBox(height: 40.0),
-            Center(
-              child: Image.asset(
-                'assets/images/morpheus_on_the_phone.jpeg',
-                fit: BoxFit.fill,
-                // height: double.infinity,
-                // width: double.infinity,
+              const SizedBox(height: 80.0),
+              Center(
+                child: Image.asset(
+                  'assets/images/morpheus_on_the_phone.jpeg',
+                  fit: BoxFit.fill,
+                ),
               ),
-            )
-          ],
+              const SizedBox(height: 80.0),
+              Container(
+                padding: const EdgeInsets.all(20.0),
+                child: const Text(
+                  'We expect The Agents to be in touch.',
+                  textAlign: TextAlign.right,
+                  style: TextStyle(
+                      fontSize: 30.0, color: Constants.matrixGreenColor),
+                ),
+              ),
+              const SizedBox(height: 80.0),
+              Container(
+                padding: const EdgeInsets.all(20.0),
+                child: const Text(
+                  'Good luck.',
+                  textAlign: TextAlign.right,
+                  style: TextStyle(
+                      fontSize: 30.0, color: Constants.matrixGreenColor),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
