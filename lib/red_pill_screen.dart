@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'components/constants.dart';
 
 class RedPillScreen extends StatelessWidget {

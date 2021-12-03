@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => RedPillScreen()));
+                            builder: (context) => const RedPillScreen()));
                   },
                   child: Image.asset(
                     'assets/images/morepheus_with_red_pill.jpeg',
@@ -130,7 +130,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => BluePillScreen()));
+                            builder: (context) => const BluePillScreen()));
                   },
                   child: Image.asset(
                     'assets/images/morepheus_with_blue_pill.jpeg',
