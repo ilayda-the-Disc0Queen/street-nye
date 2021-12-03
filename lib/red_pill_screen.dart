@@ -27,7 +27,7 @@ class RedPillScreen extends StatelessWidget {
                 height: 40.0,
               ),
               SizedBox(
-                  height: 300,
+                  height: 500,
                   child: Image.asset(
                     'assets/images/neo_bullets.gif',
                     alignment: Alignment.center,
@@ -76,12 +76,22 @@ class RedPillScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(8.0),
                 child: const Text(
-                  'The Venue: tbc \nNearest Station: Ipswich or some shit \nDates: 31st - 2nd \ncheck-in: 12 noon \ncheck-out: 11am \nMission objective: TUN UP, TUN UP 🔥🔥🔥🔥 ',
+                  'The Venue: tbc \nNearest Station: tbc \nDates: 31st - 2nd \ncheck-in: 12 noon \ncheck-out: 11am \nMission objective: TUN UP, TUN UP 🔥🔥🔥🔥 ',
                   style: TextStyle(
                       fontSize: 18.0, color: Colors.white, height: 2.5),
                   textAlign: TextAlign.left,
                 ),
-              )
+              ),
+              SizedBox(
+                  height: 500,
+                  child: Image.asset(
+                    'assets/images/neo_is_ready_to_fight.gif',
+                    alignment: Alignment.center,
+                    fit: BoxFit.cover,
+                  )),
+              const SizedBox(
+                height: 40.0,
+              ),
             ],
           ),
         ),
