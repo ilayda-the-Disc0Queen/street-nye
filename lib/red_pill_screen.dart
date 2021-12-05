@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'components/constants.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class RedPillScreen extends StatelessWidget {
   const RedPillScreen({Key? key}) : super(key: key);
@@ -72,12 +75,24 @@ class RedPillScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
+              const SizedBox(
+                height: 40.0,
+              ),
+              Center(
+                child: InkWell(
+                    child: const Text(
+                      'View the yard',
+                      style: TextStyle(color: Constants.matrixGreenColor),
+                    ),
+                    onTap: () => launch(
+                        'https://www.airbnb.co.uk/rooms/51759586?source_impression_id=p3_1638741560_CdGrLRQJ%2BDiKWmeB&guests=1&adults=1')),
+              ),
               Container(
                 padding: const EdgeInsets.all(8.0),
                 child: const Text(
-                  'The Venue: tbc \nNearest Station: tbc \nDates: 31st - 2nd \ncheck-in: 12 noon \ncheck-out: 11am \nMission objective: TUN UP, TUN UP 🔥🔥🔥🔥 ',
+                  'Nearest Stations: Southend Central and Southend Victoria \n\nDates: 31st - 2nd \n\ncheck-in: 4pm - 9pm \n\ncheck-out: 10:30am \n\nMission objective: TUN UP, TUN UP 🔥🔥🔥🔥 \n\nSee u there homies\n',
                   style: TextStyle(
-                      fontSize: 18.0, color: Colors.white, height: 2.5),
+                      fontSize: 16.0, color: Colors.white, height: 2.5),
                   textAlign: TextAlign.left,
                 ),
               ),
@@ -96,5 +111,13 @@ class RedPillScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+Future<void> _onOpen(LinkableElement link) async {
+  if (await canLaunch(link.url)) {
+    await launch(link.url);
+  } else {
+    throw 'Could not launch $link';
   }
 }

@@ -16,12 +16,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      color: Constants.matrixGreenColor,
       theme: ThemeData(
         textTheme: GoogleFonts.pressStart2pTextTheme(
           Theme.of(context).textTheme,
         ),
       ),
-      title: 'Street NYE',
+      title: 'NYE',
       home: HomePage(),
       debugShowCheckedModeBanner: false,
     );
